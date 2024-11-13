@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanksgiving Invitation</title>
+    <style>
+        body { 
+            font-family: andale mono, monospace; 
+            text-align: center; 
+            padding: 50px; 
+            background-color: #f5b87a; /* Beige background color */
+            color: #333;
+        }
+        h1 { 
+            color: #333; 
+        }
+        .button { 
+            padding: 10px 20px; 
+            margin: 10px; 
+            background-color: #eb7cd6; /* Green button for "Yes" */
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+            font-size: 1em;
+        }
+        .button.no { 
+            background-color: #eb7cd6; /* Red button for "No" */
+        }
+        #response { 
+            margin-top: 20px; 
+            font-size: 1.2em; 
+            color: #333; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Would you like to join me for Thanksgiving dinner?</h1>
+    <button class="button" onclick="respondYes()">Yes</button>
+    <button class="button no" onclick="respondNo()">No</button>
+    
+    <!-- This is where the response message will be shown -->
+    <div id="response"></div>
+
+    <script>
+        function respondYes() {
+            document.getElementById("response").innerText = "Yayayayayayayay pookstar!";
+        }
+
+        function respondNo() {
+            document.getElementById("response").innerText = "BOOOOOO TOMATO!";
+        }
+    </script>
+</body>
+</html>
