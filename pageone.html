@@ -31,7 +31,6 @@
         .button-container {
             display: flex;
             align-items: center;
-            justify-content: center; /* Center the buttons within the container */
             height: 100vh;
             gap: 10px;               /* Add space between buttons */
             margin-top: 20px;        /* Add space above buttons */
@@ -52,10 +51,6 @@
             margin-top: 20px; 
             font-size: 1.2em; 
             color: #333; 
-        }
-
-        .content {
-            text-align: center;
         }
     </style>
 
@@ -91,8 +86,6 @@
             // Hide the button container by setting display to 'none'
             document.getElementById("buttons").style.display = 'none';
         }
-
-        
 
         function confettiEffect() {
             confetti({
