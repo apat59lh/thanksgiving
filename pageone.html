@@ -12,7 +12,7 @@
             height: 100vh;
             margin: 0;
             font-family: andale mono, monospace; 
-            background-color: #f5b87a; /* Beige background color */
+            background-color: #b8996e; /* Beige background color */
             color: #333;
         }
         h1 { 
@@ -70,14 +70,20 @@
 
     <script>
         function respondYes() {
+            hideQuestion();
+            document.body.style.backgroundColor = "#b9f062";
+            documet.body.style.color = "#ab13a6";
             document.getElementById("response").innerText = "Yayayayayayayay pookstar!";
+            
             hideButtons();
             confettiEffect();
         }
 
         function respondNo() {
-            document.getElementById("response").innerText = "BOOOOOO TOMATO!";
-            hideButtons();
+            hideQuestion();
+            document.body.style.backgroundColor = "#030303";
+            documet.body.style.color = "#f00505";
+            document.getElementById("response").innerText = "we are broken up now.";
         }
         
         function hideButtons() {
