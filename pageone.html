@@ -20,6 +20,14 @@
         h1 { 
             color: #333; 
         }
+        .content {
+            text-align: center;
+            width: 100%;           /* Ensure content spans the full width */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center;    /* Center items horizontally */
+            justify-content: center;/* Center items vertically */
+        }
         .button-container {
             display: flex;
             align-items: center;
@@ -64,11 +72,18 @@
     <script>
         function respondYes() {
             document.getElementById("response").innerText = "Yayayayayayayay pookstar!";
+            hideButtons();
             confettiEffect();
         }
 
         function respondNo() {
             document.getElementById("response").innerText = "BOOOOOO TOMATO!";
+            hideButtons();
+        }
+        
+        function hideButtons() {
+            // Hide the button container by setting display to 'none'
+            document.getElementById("buttons").style.display = 'none';
         }
 
         
