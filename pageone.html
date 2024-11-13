@@ -42,6 +42,8 @@
             text-align: center;
         }
     </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
 </head>
 <body>
     <h1>Would you like to join me for Thanksgiving dinner on November 15th?</h1>
@@ -53,15 +55,27 @@
 
     <script>
         function respondYes() {
+            hideButton();
             document.getElementById("response").innerText = "Yayayayayayayay pookstar!";
+            confettiEffect();
         }
 
         function respondNo() {
+            hideButto();
             document.getElementById("response").innerText = "BOOOOOO TOMATO!";
         }
 
         function hideButton() {
-            document.querySelectorAll(".button").forEach(button => button.style.display = "none");
+            document.querySelectorAll(".button").forEach(button => button.style.display = 'none');
+        }
+
+        function confettiEffect() {
+            confetti({
+                particleCount: 100, // Number of confetti particles
+                spread: 70,         // Spread of the confetti
+                origin: { y: 0.6 }, // Starting position of the confetti (from top)
+                color: #e307a8,
+            });
         }
     </script>
 </body>
