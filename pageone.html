@@ -62,12 +62,18 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti"></script>
 </head>
 <body>
-    <h1>Would you like to join me for Thanksgiving dinner on November 15th?</h1>
-    <button class="button" onclick="respondYes()" display="none">Yes</button>
-    <button class="button no" onclick="respondNo()">No</button>
-    
-    <!-- This is where the response message will be shown -->
-    <div id="response"></div>
+        <div class="content">
+        <h1>Would you like to join me for Thanksgiving dinner on November 15th?</h1>
+        
+        <!-- Button container to center the buttons -->
+        <div class="button-container" id="buttons">
+            <button class="button" onclick="respondYes()">Yes</button>
+            <button class="button no" onclick="respondNo()">No</button>
+        </div>
+        
+        <!-- This is where the response message will be shown -->
+        <div id="response"></div>
+    </div>
 
     <script>
         function respondYes() {
@@ -83,7 +89,7 @@
         
         function hideButtons() {
             // Hide the button container by setting display to 'none'
-            document.getElementById("buttons").display = 'none';
+            document.getElementById("buttons").style.display = 'none';
         }
 
         
