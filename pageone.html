@@ -14,6 +14,7 @@
             font-family: andale mono, monospace; 
             background-color: #b8996e; /* Beige background color */
             color: #333;
+            overflow: hidden;
         }
         h1 { 
             color: #333; 
@@ -53,12 +54,24 @@
             font-size: 1.5em;
             font-weight: bold;
             color: #333;
-            animation: fadeIn 1s ease-in; /* Fade-in effect */
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        /* Falling emojis animation */
+        @keyframes fall {
+            0% {
+                top: -50px;
+                transform: rotate(0deg);
+            }
+            100% {
+                top: 100vh;
+                transform: rotate(360deg);
+            }
+        }
+
+        .falling-emoji {
+            position: absolute;
+            font-size: 30px;
+            animation: fall 5s linear infinite;
         }
         .button:hover {
             transform: scale(1.1);        /* Slightly enlarge on hover */
@@ -113,6 +126,23 @@
                 colors: ['#e307a8'],
             });
         }
+
+        function createFallingEmojis() {
+            const emojis = ['🍁', '🍂', '🌰', '🦃']; // List of autumn emojis
+            const numEmojis = 50;  // Number of emojis to fall
+
+            for (let i = 0; i < numEmojis; i++) {
+                const emoji = document.createElement('div');
+                emoji.classList.add('falling-emoji');
+                emoji.style.left = `${Math.random() * 100}vw`;  // Random horizontal position
+                emoji.style.animationDuration = `${Math.random() * 3 + 3}s`;  // Random speed of fall
+                emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];  // Random emoji
+                document.body.appendChild(emoji);
+            }
+        }
+
+        // Call function when page loads
+        window.onload = createFallingEmojis;
 
         function hideQuestion() {
             document.getElementById("question").style.display = 'none';
