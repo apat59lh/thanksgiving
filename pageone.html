@@ -50,10 +50,17 @@
         .button.no { 
             background-color: #eb7cd6; /* Red button for "No" */
         }
-        #response { 
-            margin-top: 20px; 
-            font-size: 1.2em; 
-            color: #333; 
+        #response {
+            margin-top: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            animation: fadeIn 1s ease-in; /* Fade-in effect */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         .button:hover {
             transform: scale(1.1);        /* Slightly enlarge on hover */
