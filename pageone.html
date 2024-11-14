@@ -108,6 +108,7 @@
         function respondNo() {
             hideQuestion();
             hideButtons();
+            createFallingEmojis(['💔']);
             document.body.style.backgroundColor = "#030303";
             document.body.style.color = "#f00505";
             document.getElementById("response").innerText = "we are broken up now.";
