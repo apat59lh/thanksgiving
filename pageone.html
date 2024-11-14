@@ -101,6 +101,7 @@
             document.body.style.color = "#ab13a6";
             document.getElementById("response").innerText = "Yayayayayayayay pookstar!\n I will see you on Friday for super Thanksgiving! \n p.s. Please bring a rotisserie chicken.";
             hideButtons();
+            createFallingEmojis(['🐻','🐵','💗']);
             confettiEffect();      
         }
 
@@ -126,9 +127,12 @@
             });
         }
 
-        function createFallingEmojis() {
-            const emojis = ['🍁', '🍂', '🌰', '🦃']; // List of autumn emojis
+        function createFallingEmojis(emojis) {
             const numEmojis = 50;  // Number of emojis to fall
+
+            // Clear any previous falling emojis
+            fallingEmojis.forEach(emoji => emoji.remove());
+            fallingEmojis = [];
 
             for (let i = 0; i < numEmojis; i++) {
                 const emoji = document.createElement('div');
@@ -137,11 +141,15 @@
                 emoji.style.animationDuration = `${Math.random() * 3 + 3}s`;  // Random speed of fall
                 emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];  // Random emoji
                 document.body.appendChild(emoji);
+                fallingEmojis.push(emoji);  // Store emoji for later removal
             }
         }
 
-        // Call function when page loads
-        window.onload = createFallingEmojis;
+        // Call function when page loads with "Yes" emojis
+        window.onload = function() {
+            createFallingEmojis(['🍁', '🍂', '🌰', '🦃']); // Default emojis for the page
+        };
+
 
 
         function hideQuestion() {
