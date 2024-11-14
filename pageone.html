@@ -100,14 +100,16 @@
             document.body.style.backgroundColor = "#b9f062";
             document.body.style.color = "#ab13a6";
             document.getElementById("response").innerText = "Yayayayayayayay pookstar!\n I will see you on Friday for super Thanksgiving! \n p.s. Please bring a rotisserie chicken.";
-            
+            stopFallingEmojis();
             hideButtons();
             confettiEffect();
+            
         }
 
         function respondNo() {
             hideQuestion();
             hideButtons();
+            stopFallingEmojis();
             document.body.style.backgroundColor = "#030303";
             document.body.style.color = "#f00505";
             document.getElementById("response").innerText = "we are broken up now.";
@@ -143,6 +145,13 @@
 
         // Call function when page loads
         window.onload = createFallingEmojis;
+
+        function stopFallingEmojis() {
+                fallingEmojis.forEach((emoji) => {
+                emoji.style.animation = 'none';  // Stop the animation
+                emoji.style.display = 'none';  // Hide the emojis
+            });
+        }
 
         function hideQuestion() {
             document.getElementById("question").style.display = 'none';
